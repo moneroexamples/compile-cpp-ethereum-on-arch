@@ -352,6 +352,19 @@ located in `/opt/eth`:
 /opt/bin/eth --morden
 ```
 
+**Do some CPU mining on the mainet:**
+
+Start eth node in one terminal window with json-rpc enable (`-j`):
+
+```bash
+/opt/bin/eth -j -a your_eth_address
+```
+
+In the second terminal, start `ethminer`:
+
+```bash
+/opt/eth/bin/ethminer -C --mining-threads 2
+```
 
 ## Other examples
 Other examples can be found on  [github](https://github.com/moneroexamples?tab=repositories).
