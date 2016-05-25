@@ -352,6 +352,8 @@ located in `/opt/eth`:
 /opt/bin/eth --morden
 ```
 
+To get some testnet ether can go to [faucet.ma.cx:3000](http://faucet.ma.cx:3000/)
+
 **Do some CPU mining on the mainet:**
 
 Start eth node in one terminal window with json-rpc enable (`-j`):
