@@ -340,13 +340,13 @@ located in `/opt/eth`:
 
 ## Example usage
 
-Start Ethereum node on the mainnet:
+- Start Ethereum node on the mainnet:
 
 ```bash
 /opt/bin/eth
 ```
 
-Start Ethereum node on the morden testnet:
+- Start Ethereum node on the morden testnet:
 
 ```bash
 /opt/bin/eth --morden
