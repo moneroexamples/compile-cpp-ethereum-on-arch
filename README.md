@@ -338,6 +338,21 @@ located in `/opt/eth`:
     └── libwhisper.so
 ```
 
+## Example usage
+
+Start Ethereum node on the mainnet:
+
+```bash
+/opt/bin/eth
+```
+
+Start Ethereum node on the morden testnet:
+
+```bash
+/opt/bin/eth --morden
+```
+
+
 ## Other examples
 Other examples can be found on  [github](https://github.com/moneroexamples?tab=repositories).
 Please know that some of the examples/repositories are not
