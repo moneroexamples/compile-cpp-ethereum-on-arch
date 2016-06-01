@@ -121,7 +121,7 @@ Full file tree is [here](http://pastebin.com/raw/sdEvi9rA).
 To compile and run the [Mist](https://github.com/ethereum/mist) browser and
 the [Ethereum wallet](https://github.com/ethereum/meteor-dapp-wallet),
 [meteor](https://www.meteor.com/) and [electron](http://electron.atom.io/) frameworks, and [mongodb](https://www.mongodb.com/) database are required. The meteor can be easily installed from AUR repositories,
-while the electron using node package manager [npm](https://www.npmjs.com/). Mongodb and npm (as part of nodejs)
+while the electron using node package manager [npm](https://www.npmjs.com/). Mongodb
 will be installed automatically as part of meteor's dependencies.
 
 #### Install dependencies:
@@ -129,6 +129,9 @@ will be installed automatically as part of meteor's dependencies.
 ```bash
 # this installs meteor along with nodejs (with npm) and mongodb
 yaourt -Sy meteor-js
+
+# install npm
+sudo pacman -Sy npm
 
 # install electron
 sudo npm -g install electron-prebuilt
@@ -140,7 +143,7 @@ sudo systemctl start mongodb.service
 # sudo systemctl enable mongodb.service
 ```
 
-#### Install Mist browser
+#### Install and run Mist browser
 
 ```bash
 git clone https://github.com/ethereum/mist.git
@@ -149,15 +152,20 @@ git submodule update --init
 npm install
 ```
 
-#### Install Ethereum Wallet
+Running the Mist browser can be tricky. The reason is that we need to run
+three programs at the same time: (i) Ethereum node, (ii) meteor and (iii) electron.
+The easiest thing to do is run them in three separate terminal windows.
+
+**Terminal 1: Start the eth node**
 
 ```bash
-git clone https://github.com/ethereum/meteor-dapp-wallet
-cd meteor-dapp-wallet
+/opt/eth/bin/eth
 ```
+It will start synchronizing, so be patient.
 
-#### Run the Mist browser
+**Terminal 2: Start meteor**
 
+Meteor must be started from withing `mist/interface` folder.
 
 ```bash
 # enter interface folder in the mist folder
@@ -167,11 +175,29 @@ cd mist/interface
 meteor
 ```
 
+**Terminal 3: Start electron**
+
+Electron must be started from withing `mist` folder.
+
+```bash
+# enter mist folder
+cd mist
+
+# start electron
+electron .
+```
+
+The example of the three terminals are shown below:
+
 ![mist_browser_01.png](https://raw.githubusercontent.com/moneroexamples/compile-cpp-ethereum-on-arch/master/img/mist_browser_01.png)
 
-#### Run the Ethereum Wallet
 
+#### Install and run Ethereum wallet
 
+```bash
+git clone https://github.com/ethereum/meteor-dapp-wallet
+cd meteor-dapp-wallet
+```
 
 ## Example usage
 
