@@ -230,7 +230,7 @@ In the second terminal, start `ethminer`:
 ```
 
 ## Other examples
-Other examples can be found on  [github](https://github.com/moneroexamples?tab=repositories).
+Other examples can be found on [github](https://github.com/moneroexamples?tab=repositories).
 Please know that some of the examples/repositories are not
 finished and may not work as intended.
 
