@@ -18,25 +18,41 @@ yaourt -Sy libjson-rpc-cpp
 ## Compilation
 
 ```bash
-# download the latest webthree-umbrella source code from github
-git clone --recursive https://github.com/ethereum/webthree-umbrella.git
+# enter webthree-umbrella folder after cloning its github repository
+cd webthree-umbrella
 
-# go into webthree-umbrella folder, make build folder and go into it
-cd webthree-umbrella && mkdir build && cd build
+# make a build folder and enter into it
+mkdir -p build && cd build
 
-# build a compilation system and specify installation patch
-# path can be any, but I ususaly use /opt for stuff that I compile myself
-cmake .. -DCMAKE_INSTALL_PREFIX=/opt
+# create build files and specify Ethereum installation folder
+cmake .. -DCMAKE_INSTALL_PREFIX=/opt/eth
 
-# compile
-make # -j numer_of_threads
+# compile the source code
+make
 
-# install into /opt
+# alternatively it is possible to specify number of compilation threads
+# for example to use 4 threads execute make as follows:
+# make -j 4
+
+# install the resulting binaries, shared libraries and header files into /opt
 sudo make install
 ```
 
-After successful compilation, the Ethereum binaries, header and shared libraries should be
-located in `/opt/eth`:
+
+Since Ethereum was installed in /opt/eth, executing its binaries can result in linker error due to not being able to find the Ethereum shared libraries. To rectify this issue, it is needed to add the folder containing Ethereum shared libraries into LD_LIBRARY_PATH environmental variable:
+
+
+```bash
+# update ~/.bashrc
+echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/eth/lib" >> ~/.bashrc
+
+# reload ~/.bashrc
+source ~/.bashrc
+```
+
+
+
+After compilation, the Ethereum binaries, header and shared libraries should be located in `/opt/eth`:
 
 ```bash
 /opt/eth/
