@@ -167,6 +167,8 @@ cd mist/interface
 meteor
 ```
 
+![mist_browser_01.png](https://raw.githubusercontent.com/moneroexamples/compile-cpp-ethereum-on-arch/master/img/mist_browser_01.png)
+
 #### Run the Ethereum Wallet
 
 
