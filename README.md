@@ -55,6 +55,7 @@ source ~/.bashrc
 After compilation, the Ethereum binaries, header and shared libraries should be located in `/opt/eth`:
 
 ```bash
+tree -L 2 /opt/eth/
 /opt/eth/
 ├── bin
 │   ├── alethzero
@@ -70,289 +71,105 @@ After compilation, the Ethereum binaries, header and shared libraries should be 
 │   └── solc
 ├── include
 │   ├── devcore
-│   │   ├── Assertions.h
-│   │   ├── Base58.h
-│   │   ├── Base64.h
-│   │   ├── CommonData.h
-│   │   ├── Common.h
-│   │   ├── CommonIO.h
-│   │   ├── CommonJS.h
-│   │   ├── concurrent_queue.h
-│   │   ├── db.h
-│   │   ├── debugbreak.h
-│   │   ├── Diff.h
-│   │   ├── Exceptions.h
-│   │   ├── FileSystem.h
-│   │   ├── FixedHash.h
-│   │   ├── Guards.h
-│   │   ├── Hash.h
-│   │   ├── Log.h
-│   │   ├── MemoryDB.h
-│   │   ├── OverlayDB.h
-│   │   ├── picosha2.h
-│   │   ├── RangeMask.h
-│   │   ├── RLP.h
-│   │   ├── SHA3.h
-│   │   ├── Terminal.h
-│   │   ├── TransientDirectory.h
-│   │   ├── TrieCommon.h
-│   │   ├── TrieDB.h
-│   │   ├── TrieHash.h
-│   │   ├── UndefMacros.h
-│   │   ├── vector_ref.h
-│   │   └── Worker.h
 │   ├── devcrypto
-│   │   ├── AES.h
-│   │   ├── Common.h
-│   │   ├── CryptoPP.h
-│   │   ├── ECDHE.h
-│   │   ├── Exceptions.h
-│   │   ├── SecretStore.h
-│   │   └── WordList.h
 │   ├── ethash-cl
-│   │   ├── ethash_cl_miner.h
-│   │   └── ethash_cl_miner_kernel.h
 │   ├── ethashseal
-│   │   ├── EthashAux.h
-│   │   ├── EthashClient.h
-│   │   ├── EthashCPUMiner.h
-│   │   ├── EthashGPUMiner.h
-│   │   ├── Ethash.h
-│   │   ├── EthashProofOfWork.h
-│   │   └── GenesisInfo.h
 │   ├── ethcore
-│   │   ├── ABI.h
-│   │   ├── BasicAuthority.h
-│   │   ├── BlockHeader.h
-│   │   ├── ChainOperationParams.h
-│   │   ├── Common.h
-│   │   ├── CommonJS.h
-│   │   ├── Exceptions.h
-│   │   ├── ICAP.h
-│   │   ├── KeyManager.h
-│   │   ├── Precompiled.h
-│   │   ├── SealEngine.h
-│   │   └── Transaction.h
 │   ├── ethereum
-│   │   ├── AccountDiff.h
-│   │   ├── Account.h
-│   │   ├── All.h
-│   │   ├── BasicGasPricer.h
-│   │   ├── BlockChain.h
-│   │   ├── BlockChainSync.h
-│   │   ├── BlockDetails.h
-│   │   ├── Block.h
-│   │   ├── BlockQueue.h
-│   │   ├── CachedAddressState.h
-│   │   ├── ChainParams.h
-│   │   ├── ClientBase.h
-│   │   ├── Client.h
-│   │   ├── CommonNet.h
-│   │   ├── Defaults.h
-│   │   ├── EthereumHost.h
-│   │   ├── EthereumPeer.h
-│   │   ├── Executive.h
-│   │   ├── ExtVM.h
-│   │   ├── GasPricer.h
-│   │   ├── GenericFarm.h
-│   │   ├── GenericMiner.h
-│   │   ├── GenesisInfo.h
-│   │   ├── Interface.h
-│   │   ├── LogFilter.h
-│   │   ├── MiningClient.h
-│   │   ├── State.h
-│   │   ├── Transaction.h
-│   │   ├── TransactionQueue.h
-│   │   ├── TransactionReceipt.h
-│   │   ├── Utility.h
-│   │   └── VerifiedBlock.h
 │   ├── evmasm
-│   │   ├── Assembly.h
-│   │   ├── AssemblyItem.h
-│   │   ├── BlockDeduplicator.h
-│   │   ├── CommonSubexpressionEliminator.h
-│   │   ├── ConstantOptimiser.h
-│   │   ├── ControlFlowGraph.h
-│   │   ├── Exceptions.h
-│   │   ├── ExpressionClasses.h
-│   │   ├── GasMeter.h
-│   │   ├── Instruction.h
-│   │   ├── KnownState.h
-│   │   ├── LinkerObject.h
-│   │   ├── PathGasMeter.h
-│   │   ├── SemanticInformation.h
-│   │   └── SourceLocation.h
 │   ├── evmcore
-│   │   ├── EVMSchedule.h
-│   │   ├── Exceptions.h
-│   │   └── Instruction.h
 │   ├── include
-│   │   └── evmjit
-│   │       ├── JIT-c.h
-│   │       └── JIT.h
 │   ├── libethereum
-│   │   └── libevm
-│   │       ├── All.h
-│   │       ├── ExtVMFace.h
-│   │       ├── JitUtils.h
-│   │       ├── JitVM.h
-│   │       ├── SmartVM.h
-│   │       ├── VMFace.h
-│   │       ├── VMFactory.h
-│   │       └── VM.h
 │   ├── lll
-│   │   ├── All.h
-│   │   ├── CodeFragment.h
-│   │   ├── Compiler.h
-│   │   ├── CompilerState.h
-│   │   ├── Exceptions.h
-│   │   └── Parser.h
 │   ├── natspec
-│   │   └── NatspecExpressionEvaluator.h
 │   ├── p2p
-│   │   ├── All.h
-│   │   ├── Capability.h
-│   │   ├── Common.h
-│   │   ├── HostCapability.h
-│   │   ├── Host.h
-│   │   ├── Network.h
-│   │   ├── NodeTable.h
-│   │   ├── Peer.h
-│   │   ├── RLPXFrameCoder.h
-│   │   ├── RLPXFrameReader.h
-│   │   ├── RLPXFrameWriter.h
-│   │   ├── RLPxHandshake.h
-│   │   ├── RLPXPacket.h
-│   │   ├── RLPXSocket.h
-│   │   ├── RLPXSocketIO.h
-│   │   ├── Session.h
-│   │   ├── UDP.h
-│   │   └── UPnP.h
 │   ├── scrypt
-│   │   ├── b64.h
-│   │   ├── crypto_scrypt-hexconvert.h
-│   │   ├── libscrypt.h
-│   │   ├── sha256.h
-│   │   ├── slowequals.h
-│   │   └── sysendian.h
 │   ├── solidity
-│   │   ├── ArrayUtils.h
-│   │   ├── AsmCodeGen.h
-│   │   ├── AsmData.h
-│   │   ├── AsmParser.h
-│   │   ├── AsmStack.h
-│   │   ├── AST_accept.h
-│   │   ├── ASTAnnotations.h
-│   │   ├── ASTForward.h
-│   │   ├── AST.h
-│   │   ├── ASTJsonConverter.h
-│   │   ├── ASTPrinter.h
-│   │   ├── ASTUtils.h
-│   │   ├── ASTVisitor.h
-│   │   ├── CompilerContext.h
-│   │   ├── Compiler.h
-│   │   ├── CompilerStack.h
-│   │   ├── CompilerUtils.h
-│   │   ├── ConstantEvaluator.h
-│   │   ├── ContractCompiler.h
-│   │   ├── DeclarationContainer.h
-│   │   ├── DocStringAnalyser.h
-│   │   ├── DocStringParser.h
-│   │   ├── Exceptions.h
-│   │   ├── ExpressionCompiler.h
-│   │   ├── GasEstimator.h
-│   │   ├── GlobalContext.h
-│   │   ├── InterfaceHandler.h
-│   │   ├── LValue.h
-│   │   ├── NameAndTypeResolver.h
-│   │   ├── ParserBase.h
-│   │   ├── Parser.h
-│   │   ├── ReferencesResolver.h
-│   │   ├── Scanner.h
-│   │   ├── SourceReferenceFormatter.h
-│   │   ├── SyntaxChecker.h
-│   │   ├── Token.h
-│   │   ├── TypeChecker.h
-│   │   ├── Types.h
-│   │   ├── Utils.h
-│   │   ├── Version.h
-│   │   └── Why3Translator.h
 │   ├── testutils
-│   │   ├── BlockChainLoader.h
-│   │   ├── Common.h
-│   │   ├── FixedClient.h
-│   │   └── StateLoader.h
 │   ├── web3jsonrpc
-│   │   ├── AccountHolder.h
-│   │   ├── AdminEthFace.h
-│   │   ├── AdminEth.h
-│   │   ├── AdminNetFace.h
-│   │   ├── AdminNet.h
-│   │   ├── AdminUtilsFace.h
-│   │   ├── AdminUtils.h
-│   │   ├── BzzFace.h
-│   │   ├── Bzz.h
-│   │   ├── DBFace.h
-│   │   ├── DebugFace.h
-│   │   ├── Debug.h
-│   │   ├── EthFace.h
-│   │   ├── Eth.h
-│   │   ├── IpcServerBase.h
-│   │   ├── IpcServer.h
-│   │   ├── JsonHelper.h
-│   │   ├── LevelDB.h
-│   │   ├── MemoryDB.h
-│   │   ├── ModularServer.h
-│   │   ├── NetFace.h
-│   │   ├── Net.h
-│   │   ├── PersonalFace.h
-│   │   ├── Personal.h
-│   │   ├── SafeHttpServer.h
-│   │   ├── SessionManager.h
-│   │   ├── UnixSocketServer.h
-│   │   ├── Web3Face.h
-│   │   ├── Web3.h
-│   │   ├── WhisperFace.h
-│   │   ├── Whisper.h
-│   │   └── WinPipeServer.h
 │   ├── webthree
-│   │   ├── IPFS.h
-│   │   ├── Support.h
-│   │   ├── Swarm.h
-│   │   ├── SystemManager.h
-│   │   └── WebThree.h
 │   └── whisper
-│       ├── BloomFilter.h
-│       ├── Common.h
-│       ├── Interface.h
-│       ├── Message.h
-│       ├── WhisperDB.h
-│       ├── WhisperHost.h
-│       └── WhisperPeer.h
 └── lib
-    ├── libdevcore.so
-    ├── libdevcrypto.so
-    ├── libethash-cl.so
-    ├── libethashseal.so
-    ├── libethash.so
-    ├── libethcore.so
-    ├── libethereum.so
-    ├── libevmasm.so
-    ├── libevmcore.so
-    ├── libevmjit.so -> libevmjit.so.0.9
-    ├── libevmjit.so.0.9 -> libevmjit.so.0.9.0.2
-    ├── libevmjit.so.0.9.0.2
-    ├── libevm.so
-    ├── liblll.so
-    ├── libnatspec.so
-    ├── libp2p.so
-    ├── libscrypt.so
-    ├── libsolidity.so
-    ├── libtestutils.so
-    ├── libweb3jsonrpc.so
-    ├── libwebthree.so
-    └── libwhisper.so
+   ├── libdevcore.so
+   ├── libdevcrypto.so
+   ├── libethash-cl.so
+   ├── libethashseal.so
+   ├── libethash.so
+   ├── libethcore.so
+   ├── libethereum.so
+   ├── libevmasm.so
+   ├── libevmcore.so
+   ├── libevmjit.so -> libevmjit.so.0.9
+   ├── libevmjit.so.0.9 -> libevmjit.so.0.9.0.2
+   ├── libevmjit.so.0.9.0.2
+   ├── libevm.so
+   ├── liblll.so
+   ├── libnatspec.so
+   ├── libp2p.so
+   ├── libscrypt.so
+   ├── libsolidity.so
+   ├── libtestutils.so
+   ├── libweb3jsonrpc.so
+   ├── libwebthree.so
+   └── libwhisper.so
 ```
+
+Full file tree is [here](http://pastebin.com/raw/sdEvi9rA).
+
+## Compile Mist browser and Ethereum wallet
+
+To compile and run the [Mist](https://github.com/ethereum/mist) browser and
+the [Ethereum wallet](https://github.com/ethereum/meteor-dapp-wallet),
+[meteor](https://www.meteor.com/) and [electron](http://electron.atom.io/) frameworks, and [mongodb](https://www.mongodb.com/) database are required. The meteor can be easily installed from AUR repositories,
+while the electron using node package manager [npm](https://www.npmjs.com/). Mongodb and npm (as part of nodejs)
+will be installed automatically as part of meteor's dependencies.
+
+#### Install dependencies:
+
+```bash
+# this installs meteor along with nodejs (with npm) and mongodb
+yaourt -Sy meteor-js
+
+# install electron
+sudo npm -g install electron-prebuilt
+
+# to start the mongodb service manually
+sudo systemctl start mongodb.service
+
+# and/or to make it autostart at system boot
+# sudo systemctl enable mongodb.service
+```
+
+#### Install Mist browser
+
+```bash
+git clone https://github.com/ethereum/mist.git
+cd mist
+git submodule update --init
+npm install
+```
+
+#### Install Ethereum Wallet
+
+```bash
+git clone https://github.com/ethereum/meteor-dapp-wallet
+cd meteor-dapp-wallet
+```
+
+#### Run the Mist browser
+
+
+```bash
+# enter interface folder in the mist folder
+cd mist/interface
+
+# start meteor
+meteor
+```
+
+#### Run the Ethereum Wallet
+
+
 
 ## Example usage
 
