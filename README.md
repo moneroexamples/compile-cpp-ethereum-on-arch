@@ -18,6 +18,10 @@ yaourt -Sy libjson-rpc-cpp
 ## Compilation
 
 ```bash
+
+# clone webthree-umbrella repository 
+git clone --recursive https://github.com/ethereum/webthree-umbrella.git
+
 # enter webthree-umbrella folder after cloning its github repository
 cd webthree-umbrella
 
