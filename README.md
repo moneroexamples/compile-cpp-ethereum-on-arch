@@ -1,6 +1,6 @@
 # Compile cpp-ethereum (aka webthree-umbrella) on Arch Linux
 
-The example shows how to compile the current github version (as of 25 May 2016) of C++ version of [ethereum](http://ethereum.org/), i.e., [webthree-umbrella](https://github.com/ethereum/webthree-umbrella), on [Arch Linux](https://www.archlinux.org/).
+The example shows how to compile the current github version (as of 25 May 2016) of C++ version of [ethereum](http://ethereum.org/), i.e., [cpp-ethereum](https://github.com/ethereum/cpp-ethereum), on [Arch Linux](https://www.archlinux.org/).
 
 ## Dependencies
 Before proceeding with the compilation, the following packages are required:
@@ -20,10 +20,10 @@ yaourt -Sy libjson-rpc-cpp
 ```bash
 
 # clone webthree-umbrella repository 
-git clone --recursive https://github.com/ethereum/webthree-umbrella.git
+git clone --recursive https://github.com/ethereum/cpp-ethereum.git
 
 # enter webthree-umbrella folder after cloning its github repository
-cd webthree-umbrella
+cd cpp-ethereum
 
 # make a build folder and enter into it
 mkdir -p build && cd build
