@@ -1,4 +1,4 @@
-# Compile cpp-ethereum (aka webthree-umbrella) on Arch Linux
+# Compile cpp-ethereum on Arch Linux
 
 The example shows how to compile the current github version (as of 25 May 2016) of C++ version of [ethereum](http://ethereum.org/), i.e., [cpp-ethereum](https://github.com/ethereum/cpp-ethereum), on [Arch Linux](https://www.archlinux.org/).
 
