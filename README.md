@@ -7,7 +7,7 @@ Before proceeding with the compilation, the following packages are required:
 
 ```bash
 # from Arch official repositories
-sudo pacman -Sy git base-devel cmake leveldb libmicrohttpd miniupnpc
+sudo pacman -Sy git base-devel cmake leveldb libmicrohttpd
 ```
 
 ## Compilation
