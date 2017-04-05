@@ -1,19 +1,14 @@
 # Compile cpp-ethereum on Arch Linux
 
-The example shows how to compile the current github version (as of 25 May 2016) of C++ version of [ethereum](http://ethereum.org/), i.e., [cpp-ethereum](https://github.com/ethereum/cpp-ethereum), on [Arch Linux](https://www.archlinux.org/).
+The example shows how to compile the current github version (as of 05 April 2016) of C++ version of [ethereum](http://ethereum.org/), i.e., [cpp-ethereum](https://github.com/ethereum/cpp-ethereum), on [Arch Linux](https://www.archlinux.org/).
 
 ## Dependencies
 Before proceeding with the compilation, the following packages are required:
 
 ```bash
 # from Arch official repositories
-sudo pacman -Sy git base-devel cmake boost crypto++ leveldb llvm miniupnpc libcl opencl-headers libmicrohttpd qt5-base qt5-webengine
-
-# from Arch User Repository (i.e. Aur) we need libjson-rpc-cpp
-yaourt -Sy libjson-rpc-cpp
+sudo pacman -Sy git base-devel cmake leveldb libmicrohttpd miniupnpc
 ```
-
-[yaourt](http://archlinux.fr/yaourt-en) installation instruction are [here](http://revryl.com/2013/07/11/yaourt-installation-arch-linux/). Off course any other [aur helper](https://wiki.archlinux.org/index.php/AUR_helpers) can be used to install dependencies from the aur.
 
 ## Compilation
 
@@ -41,20 +36,6 @@ make
 # install the resulting binaries, shared libraries and header files into /opt
 sudo make install
 ```
-
-
-Since Ethereum was installed in /opt/eth, executing its binaries can result in linker error due to not being able to find the Ethereum shared libraries. To rectify this issue, it is needed to add the folder containing Ethereum shared libraries into LD_LIBRARY_PATH environmental variable:
-
-
-```bash
-# update ~/.bashrc
-echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/eth/lib" >> ~/.bashrc
-
-# reload ~/.bashrc
-source ~/.bashrc
-```
-
-
 
 After compilation, the Ethereum binaries, header and shared libraries should be located in `/opt/eth`:
 
