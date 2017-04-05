@@ -95,6 +95,37 @@ alias ethtestnet='/opt/eth/bin/eth --ropsten --pin --unsafe-transactions --peers
 
 `--unsafe-transactions` don't need to be used for synchrnonization. But later its easier to make test transactions using `geth` console. When using `mist` wallet, it does not matter.
 
+## Install geth
+
+`cpp-ethereum` does not provide console interface. To interact with the `eth` node, `geth` JavaScript console can be used.
+
+```
+sudo pacman -S geth
+```
+
+To connect to eth node:
+
+```
+#in terminal 1: start eth node using eth alias created above
+ethtestnet
+
+#in terminal 2: 
+geth attach
+```
+
+Once connected can execute `eth.syncing` or `eth.blockNumber` to check current synchronization status.
+
+```
+> eth.syncing
+{
+  currentBlock: 682915,
+  highestBlock: 688999,
+  startingBlock: 682603
+}
+> eth.blockNumber
+683452
+```
+
 
 ## Other examples
 Other examples can be found on [github](https://github.com/moneroexamples?tab=repositories).
