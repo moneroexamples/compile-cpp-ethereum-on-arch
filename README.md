@@ -90,10 +90,14 @@ network, the following command can be used. It is presented as an bash alias tha
 added you your `.bashrc` for easier use:
 
 ```
-alias ethtestnet='/opt/eth/bin/eth --ropsten --pin --unsafe-transactions --peerset "required:20c9ad97c081d63397d7b685a412227a40e23c8bdc6688c6f37e97cfbc22d2b4d1db1510d8f61e6a8866ad7f0e17c02b14182d37ea7c3c8b9c2683aeb6b733a1@52.169.14.227:30303 required:6ce05930c72abc632c58e2e4324f7c7ea478cec0ed4fa2528982cf34483094e9cbc9216e7aa349691242576d552a2a56aaeae426c5303ded677ce455ba1acd9d@13.84.180.240:30303"'
+/opt/eth/bin/eth -j --rpccorsdomain "*" --ropsten --pin --unsafe-transactions --peerset "required:20c9ad97c081d63397d7b685a412227a40e23c8bdc6688c6f37e97cfbc22d2b4d1db1510d8f61e6a8866ad7f0e17c02b14182d37ea7c3c8b9c2683aeb6b733a1@52.169.14.227:30303 required:6ce05930c72abc632c58e2e4324f7c7ea478cec0ed4fa2528982cf34483094e9cbc9216e7aa349691242576d552a2a56aaeae426c5303ded677ce455ba1acd9d@13.84.180.240:30303" -a "0xdf9f93fe406920ae5335021b3fc016de3ab7070e" 
 ```
 
 `--unsafe-transactions` don't need to be used for synchrnonization. But later its easier to make test transactions using `geth` console. When using `mist` wallet, it does not matter.
+
+`-j --rpccorsdomain "*"` are for working local copy of [browser-solidity](https://github.com/ethereum/browser-solidity).
+
+`-a "0xdf9f93fe406920ae5335021b3fc016de3ab7070e"` is my coinbase address. You should replace it with yours when you create your first ropsten ether account.
 
 ## Install geth
 
