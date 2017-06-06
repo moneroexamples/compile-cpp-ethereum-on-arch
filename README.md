@@ -151,8 +151,8 @@ true
 Check if we mined something, i.e., check coinbase balance:
 
 ```
-> eth.getBalance(eth.coinbase)
-46715300940000000000
+> web3.fromWei(eth.getBalance(eth.coinbase))
+51.7183586
 ```
 
 ## Other examples
