@@ -44,7 +44,7 @@ sudo make install
 cd ~
 
 # clone webthree-umbrella repository 
-git clone --recursivehttps://github.com/ethereum/solidity.git
+git clone --recursive https://github.com/ethereum/solidity.git
 
 # enter the folder after cloning its github repository
 cd solidity
