@@ -23,6 +23,11 @@ cd cpp-ethereum
 # make a build folder and enter into it
 mkdir -p build && cd build
 
+#make sure ../cpp-ethereum/build/libs has the files: libbinaryen.a, libmpir.a
+#copy these files from ../cpp-ethereum/build/deps/libs64 to ../cpp-ethereum/build/deps/lib
+cp -r deps/lib64/libbinaryen.a deps/lib/
+cp -r deps/lib64/libmpir.a deps/lib/
+
 # create build files and specify Ethereum installation folder
 cmake .. -DCMAKE_INSTALL_PREFIX=/opt/eth
 
